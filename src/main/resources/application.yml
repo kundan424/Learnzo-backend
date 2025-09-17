@@ -1,0 +1,24 @@
+spring:
+  data:
+    mongodb:
+      uri: ${MONGO_URI}
+      database: ${MONGO_DATABASE:studentDB}
+      auto-index-creation: true
+
+  logging:
+    level:
+      com:
+        learnzo:
+          student-management: DEBUG
+      org:
+        springframework:
+          security: DEBUG
+
+  output:
+    ansi:
+      enabled: ALWAYS
+app:
+  cors:
+    # This placeholder will be replaced by an environment variable.
+    # The default value is for our local React development server.
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
